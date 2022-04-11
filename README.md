@@ -10,8 +10,8 @@ Things you may want to cover:
 
 ## Considerations:
 
-[] The email and user preferences must be stored in Database.
-[] The same email cannot be registered twice, an error message will be displayed to the user indicating that the email already exists.
+[*] The email and user preferences must be stored in Database.
+[*] The same email cannot be registered twice, an error message will be displayed to the user indicating that the email already exists.
 [] Make a simple validation of the user's input to guarantee that what they have entered complies with the valid format of an email.
 [] The user may select one or more preferences, but they must select at least one of them.
 [] Once the user has been registered successfully, an email will be sent confirming their subscription.

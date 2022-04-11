@@ -5,6 +5,6 @@ class Susciption < ApplicationRecord
     # Validate at least one ckeck 
     validate do |value|
         validationCheck = [value.isMen,value.isChildren, value.isWomen].any? { |x| x == true }
-        errors.add :isMen, :too_plain, message: "is not cool enough" if !validationCheck
+        errors.add :isMen, :too_plain, message: "should select at least one preference" if !validationCheck
     end
 end

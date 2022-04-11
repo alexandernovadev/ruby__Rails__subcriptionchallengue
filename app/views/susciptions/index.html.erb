@@ -1,7 +1,8 @@
 <section class="bannerSub">
   <div class="bannerSub__imagelogo center">
     <%= image_tag("micolet-logo.svg", :alt => "Logo Image") %>
-    <%= I18n.t('hello') %>
+    <%= I18n.t("hello") %>
+    <%= I18n.locale %>
   
     <span>Moda casi nueva con garantía</span>
   </div>
@@ -12,9 +13,9 @@
 </section>
 <%= render "form", susciption: @susciption %>
 
-
+<%# TODO Rails links here %>
 <div class="languages">
-  <span><%= image_tag("spain.gif", :alt => "Spain") %></span>
-  <span><%= image_tag("us.gif", :alt => "US") %></span>
-  <span><%= image_tag("france.gif", :alt => "France") %></span>
+  <span onclick="window.location.href = '/es'"><%= image_tag("spain.gif", :alt => "Spain") %></span>
+  <span onclick="window.location.href = '/en'"><%= image_tag("us.gif", :alt => "US") %></span>
+  <span onclick="window.location.href = '/fr'"><%= image_tag("france.gif", :alt => "France") %></span>
 </div>
