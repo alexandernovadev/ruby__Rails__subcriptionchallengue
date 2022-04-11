@@ -1,3 +1,8 @@
-
 es:
-  hello: "Hola Marte "
+  str_preferences: "Preferencias"
+  str_womensfashion: "Moda femenina"
+  str_mensfashion: "Moda masculina"
+  str_childrenfashion: "Moda infantil"
+  str_mode_new_garanty: "Moda casi nueva con garantía"
+  str_welcome_country_launch: "Bienvenido ! Próximamente lanzaremos tu sitio en el país"
+  str_subscribe_receive_newletter: "Suscríbete para recibir nuestro boletín"

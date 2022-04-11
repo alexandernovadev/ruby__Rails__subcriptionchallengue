@@ -14,19 +14,24 @@
   <%= form.text_field :email %>
 </div>
 <div class="">
-  <label class="labelCustom opt">Prefences</label>
+  <label class="labelCustom opt">
+  <%= I18n.t("str_preferences") %>
+  </label>
 </div>
 <div>
 </div>
-<label class="container">Womem's Fashion
+<label class="container">
+  <%= I18n.t("str_womensfashion") %>
   <%= form.check_box :isWomen %>
   <span class="checkmark"></span>
 </label>
-<label class="container">Men's Fashion
+<label class="container">
+  <%= I18n.t("str_mensfashion") %>
   <%= form.check_box :isMen %>
   <span class="checkmark"></span>
 </label>
-<label class="container">Children's Fashion
+<label class="container">
+  <%= I18n.t("str_childrenfashion") %>
   <%= form.check_box :isChildren %>
   <span class="checkmark"></span>
 </label>

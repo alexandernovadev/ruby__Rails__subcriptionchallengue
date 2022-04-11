@@ -1,3 +1,9 @@
 
 fr:
-  hello: "Salut Monde"
+  str_preferences: "Préférences"
+  str_womensfashion: "La mode des femmes"
+  str_mensfashion: "La mode masculine"
+  str_childrenfashion: "Mode enfantine"
+  str_mode_new_garanty: "Mode presque neuve avec garantie"
+  str_welcome_country_launch: "Bienvenue ! Bientôt nous lancerons votre site dans le pays"
+  str_subscribe_receive_newletter: "Abonnez-vous pour recevoir notre newsletter"

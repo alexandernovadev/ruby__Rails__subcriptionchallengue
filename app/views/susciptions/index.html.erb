@@ -1,14 +1,14 @@
 <section class="bannerSub">
+
   <div class="bannerSub__imagelogo center">
     <%= image_tag("micolet-logo.svg", :alt => "Logo Image") %>
-    <%= I18n.t("hello") %>
-    <%= I18n.locale %>
-  
-    <span>Moda casi nueva con garantía</span>
+    <span><%= I18n.t("str_mode_new_garanty") %></span>
   </div>
+
   <div class="center">
-    <h1>Welcome ! Soon we will lauch our ite in the country</h1>
-    <h2>Subcribe to receive our newletter</h2>
+    <h1><%= I18n.t("str_welcome_country_launch") %></h1>
+    <h1><%= I18n.t("str_subscribe_receive_newletter") %></h1>
+    <h2></h2>
   </div>
 </section>
 <%= render "form", susciption: @susciption %>
