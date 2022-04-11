@@ -1,14 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<section class="bannerSub">
+  <div class="bannerSub__imagelogo center">
+    <%= image_tag("micolet-logo.svg", :alt => "Logo Image") %>
+    <%= I18n.t('hello') %>
+  
+    <span>Moda casi nueva con garantía</span>
+  </div>
+  <div class="center">
+    <h1>Welcome ! Soon we will lauch our ite in the country</h1>
+    <h2>Subcribe to receive our newletter</h2>
+  </div>
+</section>
+<%= render "form", susciption: @susciption %>
 
-<h1>Susciptions</h1>
 
-<div id="susciptions">
-  <% @susciptions.each do |susciption| %>
-    <%= render susciption %>
-    <p>
-      <%= link_to "Show this susciption", susciption %>
-    </p>
-  <% end %>
+<div class="languages">
+  <span><%= image_tag("spain.gif", :alt => "Spain") %></span>
+  <span><%= image_tag("us.gif", :alt => "US") %></span>
+  <span><%= image_tag("france.gif", :alt => "France") %></span>
 </div>
-
-<%= link_to "New susciption", new_susciption_path %>

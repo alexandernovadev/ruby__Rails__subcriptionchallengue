@@ -1,37 +1,36 @@
-<%= form_with(model: susciption) do |form| %>
+<%= form_with(model: susciption ,:html => {:id =>"formBeauty"}) do |form| %>
   <% if susciption.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(susciption.errors.count, "error") %> prohibited this susciption from being saved:</h2>
-
-      <ul>
-        <% susciption.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <div style="color: var(--textDanger);margin-top:12px;margin-bottom:12px;" class="center"
+      <h3><%= pluralize(susciption.errors.count, "error") %> prohibited this susciption from being saved:</h3>
+    <ul>
+      <% susciption.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
   </div>
-
-  <div>
-    <%= form.label :isWomen, style: "display: block" %>
-    <%= form.check_box :isWomen %>
-  </div>
-
-  <div>
-    <%= form.label :isMen, style: "display: block" %>
-    <%= form.check_box :isMen %>
-  </div>
-
-  <div>
-    <%= form.label :isChildren, style: "display: block" %>
-    <%= form.check_box :isChildren %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<% end %>
+<div style="flex-direction:column;">
+  <%= form.label :email, class: "labelCustom" %>
+  <%= form.text_field :email %>
+</div>
+<div class="">
+  <label class="labelCustom opt">Prefences</label>
+</div>
+<div>
+</div>
+<label class="container">Womem's Fashion
+  <%= form.check_box :isWomen %>
+  <span class="checkmark"></span>
+</label>
+<label class="container">Men's Fashion
+  <%= form.check_box :isMen %>
+  <span class="checkmark"></span>
+</label>
+<label class="container">Children's Fashion
+  <%= form.check_box :isChildren %>
+  <span class="checkmark"></span>
+</label>
+<div class="center">
+  <%= form.submit %>
+</div>
 <% end %>

@@ -3,7 +3,7 @@ class SusciptionsController < ApplicationController
 
   # GET /susciptions or /susciptions.json
   def index
-    @susciptions = Susciption.all
+    @susciption = Susciption.new
   end
 
   # GET /susciptions/1 or /susciptions/1.json
@@ -23,12 +23,15 @@ class SusciptionsController < ApplicationController
   def create
     @susciption = Susciption.new(susciption_params)
 
+    # Validate emial
+
+
     respond_to do |format|
       if @susciption.save
         format.html { redirect_to susciption_url(@susciption), notice: "Susciption was successfully created." }
-        format.json { render :show, status: :created, location: @susciption }
+        format.json { render :index, status: :created, location: @susciption }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @susciption.errors, status: :unprocessable_entity }
       end
     end
