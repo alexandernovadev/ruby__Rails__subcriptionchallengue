@@ -1,0 +1,2 @@
+module SusciptionsHelper
+end

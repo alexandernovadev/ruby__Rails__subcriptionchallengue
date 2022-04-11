@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Susciptions</h1>
+
+<div id="susciptions">
+  <% @susciptions.each do |susciption| %>
+    <%= render susciption %>
+    <p>
+      <%= link_to "Show this susciption", susciption %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New susciption", new_susciption_path %>
