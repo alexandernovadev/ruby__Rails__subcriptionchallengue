@@ -1,8 +1,9 @@
 <%= form_with(model: susciption ,:html => {:id =>"formBeauty"}) do |form| %>
   <% if susciption.errors.any? %>
-    <div style="color: var(--textDanger);margin-top:12px;margin-bottom:12px;" class="center"
-      <h3><%= pluralize(susciption.errors.count, "error") %> prohibited this susciption from being saved:</h3>
+    <div style="color: var(--textDanger);margin-top:12px;margin-bottom:12px;" class="center">
+      <span> Upps ! Tienes algunos errores</span>
     <ul>
+      <hr>
       <% susciption.errors.each do |error| %>
         <li><%= error.full_message %></li>
       <% end %>
@@ -11,7 +12,7 @@
 <% end %>
 <div style="flex-direction:column;">
   <%= form.label :email, class: "labelCustom" %>
-  <%= form.text_field :email %>
+  <%= form.email_field :email,required: true,autocomplete:'off' %>
 </div>
 <div class="">
   <label class="labelCustom opt">

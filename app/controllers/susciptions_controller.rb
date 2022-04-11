@@ -8,6 +8,7 @@ class SusciptionsController < ApplicationController
 
   # GET /susciptions/1 or /susciptions/1.json
   def show
+
   end
 
   # GET /susciptions/new
@@ -22,8 +23,6 @@ class SusciptionsController < ApplicationController
   # POST /susciptions or /susciptions.json
   def create
     @susciption = Susciption.new(susciption_params)
-
-    # Validate emial
 
 
     respond_to do |format|

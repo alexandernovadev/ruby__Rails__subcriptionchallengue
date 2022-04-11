@@ -16,7 +16,8 @@ module Micoletsubs
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.eager_load_paths << Rails.root.join("extras")
+    # config.eager_load_paths << Rails.root.join("lib")
+    config.autoload_paths << "#{Rails.root}/lib"
     config.i18n.available_locales = [:en, :es, :fr]
     config.i18n.default_locale = :es
   end
