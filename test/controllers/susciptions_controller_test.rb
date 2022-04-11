@@ -3,6 +3,7 @@ require "test_helper"
 class SusciptionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @susciption = susciptions(:one)
+    @susciptionewell = susciptions(:well)
   end
 
   test "should get index" do
@@ -15,34 +16,48 @@ class SusciptionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create susciption" do
-    assert_difference("Susciption.count") do
-      post susciptions_url, params: { susciption: { email: @susciption.email, isChildren: @susciption.isChildren, isMen: @susciption.isMen, isWomen: @susciption.isWomen } }
-    end
-
-    assert_redirected_to susciption_url(Susciption.last)
+  test "should not create susciption " do
+      post susciptions_url, params: { 
+        susciption: { email: @susciption.email, 
+        isChildren: @susciption.isChildren,
+        isMen: @susciption.isMen,
+        isWomen: @susciption.isWomen }
+      }
+    
+    assert_response :unprocessable_entity
   end
 
-  test "should show susciption" do
-    get susciption_url(@susciption)
-    assert_response :success
+  test "should create retirn ok " do
+    post susciptions_url, params: { 
+      susciption: { email: @susciptionewell.email, 
+      isChildren: @susciptionewell.isChildren,
+      isMen: @susciptionewell.isMen,
+      isWomen: @susciptionewell.isWomen }
+    }
+    
+   assert_response :created
   end
 
-  test "should get edit" do
-    get edit_susciption_url(@susciption)
-    assert_response :success
-  end
+  # test "should show susciption" do
+  #   get susciption_url(@susciption)
+  #   assert_response :success
+  # end
 
-  test "should update susciption" do
-    patch susciption_url(@susciption), params: { susciption: { email: @susciption.email, isChildren: @susciption.isChildren, isMen: @susciption.isMen, isWomen: @susciption.isWomen } }
-    assert_redirected_to susciption_url(@susciption)
-  end
+  # test "should get edit" do
+  #   get edit_susciption_url(@susciption)
+  #   assert_response :success
+  # end
 
-  test "should destroy susciption" do
-    assert_difference("Susciption.count", -1) do
-      delete susciption_url(@susciption)
-    end
+  # test "should update susciption" do
+  #   patch susciption_url(@susciption), params: { susciption: { email: @susciption.email, isChildren: @susciption.isChildren, isMen: @susciption.isMen, isWomen: @susciption.isWomen } }
+  #   assert_redirected_to susciption_url(@susciption)
+  # end
 
-    assert_redirected_to susciptions_url
-  end
+  # test "should destroy susciption" do
+  #   assert_difference("Susciption.count", -1) do
+  #     delete susciption_url(@susciption)
+  #   end
+
+  #   assert_redirected_to susciptions_url
+  # end
 end

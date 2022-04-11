@@ -8,6 +8,12 @@ one:
 
 two:
   email: MyString
-  isWomen: false
+  isWomen: true
+  isMen: false
+  isChildren: false
+
+well:
+  email: titoantifa69@gmail.com
+  isWomen: true
   isMen: false
   isChildren: false

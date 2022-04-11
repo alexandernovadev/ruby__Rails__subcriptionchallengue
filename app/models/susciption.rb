@@ -17,14 +17,15 @@ class Susciption < ApplicationRecord
         require 'net/https'
 
         url_serviceabs = "https://emailvalidation.abstractapi.com/v1"
-        mail = "perrom,mksd@sgmail.com"
         apikey = "b44585dd38e3494ea4f55d17efb414a4"
     
-        uri = URI("#{url_serviceabs}/?api_key=#{apikey}&email=#{mail}")
+        uri = URI("#{url_serviceabs}/?api_key=#{apikey}&email=#{email}")
         res = Net::HTTP.get_response(uri)
      
         quality_score = JSON.load(res.body)["quality_score"].to_d
-       
+        p JSON.load(res.body)
+
+
         errors.add :email, :too_plain, message: "email no server #{email}"  if quality_score < 0.7 
     end
 end

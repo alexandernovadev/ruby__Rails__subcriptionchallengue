@@ -4,6 +4,8 @@ class SusciptionsController < ApplicationController
   # GET /susciptions or /susciptions.json
   def index
     @susciption = Susciption.new
+
+    @susciptions = Susciption.all
   end
 
   # GET /susciptions/1 or /susciptions/1.json
