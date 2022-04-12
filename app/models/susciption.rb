@@ -22,10 +22,12 @@ class Susciption < ApplicationRecord
         uri = URI("#{url_serviceabs}/?api_key=#{apikey}&email=#{email}")
         res = Net::HTTP.get_response(uri)
      
-        quality_score = JSON.load(res.body)["quality_score"].to_d
-        p JSON.load(res.body)
-
-
-        errors.add :email, :too_plain, message: "email no server #{email}"  if quality_score < 0.7 
+        data__json = JSON.load(res.body)
+        quality_score = data__json["quality_score"].to_d || nil
+        
+        ## Serive errors
+        # errors.add :email, :too_plain, message: " Asstracpi no esta funcionando ..." if !data__json["error"].nil?
+    
+        # errors.add :email, :too_plain, message: "email no server #{email}"  if quality_score < 0.7 && !quality_score.nil?
     end
 end

@@ -29,7 +29,7 @@ class SusciptionsController < ApplicationController
 
     respond_to do |format|
       if @susciption.save
-        format.html { redirect_to susciption_url(@susciption), notice: "Susciption was successfully created." }
+        format.html { redirect_to '/' , notice: "Gracias por suscribirte, las mejores promociones te esperan !" }
         format.json { render :index, status: :created, location: @susciption }
       else
         format.html { render :index, status: :unprocessable_entity }
