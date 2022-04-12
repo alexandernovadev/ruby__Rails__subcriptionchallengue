@@ -1,0 +1,15 @@
+   <h1>Welcome</h1>
+   <p>Thank you <%= @subscription.email %>, you are great !</p>
+    <p>
+    <h2><%= t('str_preferences')%></h2>
+    --------------------------
+    </p>
+    <p><%= '-> WomensFashion' if @subscription.isWomen %></p>
+    <p><%= '-> MensFashion' if @subscription.isMen %></p>
+    <p><%= '-> ChildrenFashion' if @subscription.isChildren %></p>
+    <br>
+    --------------------------
+    <br>
+    #####################
+    <p>Very well</p>
+    #####################

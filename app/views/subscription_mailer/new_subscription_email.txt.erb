@@ -1,0 +1,10 @@
+Thank you <%= @subscription.email %>!
+    
+    Subscription details
+    --------------------------
+    <%= '-> WomensFashion' if @subscription.isWomen %>
+    <%= '-> MensFashion' if @subscription.isMen %>
+    <%= '-> ChildrenFashion' if @subscription.isChildren %>
+    Message:
+    ----------
+    Very well

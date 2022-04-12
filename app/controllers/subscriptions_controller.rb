@@ -26,10 +26,12 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
+        SubscriptionMailer.with(subscription: @subscription).new_subscription_email.deliver_later
+
         format.html { redirect_to '/' , notice: "Gracias por suscribirte, las mejores promociones te esperan !" }
         format.json { render :index, status: :created, location: @susciption }
      else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @subscription.errors, status: :unprocessable_entity }
       end
     end
