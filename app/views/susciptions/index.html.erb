@@ -1,8 +1,8 @@
 
 <%if !flash[:notice].blank? %>
-    <div class="notice">
-<h2>	<%= flash[:notice]%></h2>
-    </div>
+  <div class="notice">
+    <h2><%= flash[:notice]%></h2>
+  </div>
 <% end %>
 
 <section class="bannerSub">
@@ -14,8 +14,7 @@
 
   <div class="center">
     <h1><%= I18n.t("str_welcome_country_launch") %></h1>
-    <h1><%= I18n.t("str_subscribe_receive_newletter") %></h1>
-    <h2></h2>
+    <h1><small><%= I18n.t("str_subscribe_receive_newletter") %></small></h1>
   </div>
 </section>
 <%= render "form", susciption: @susciption %>
@@ -26,3 +25,39 @@
   <span onclick="window.location.href = '/en'"><%= image_tag("us.gif", :alt => "US") %></span>
   <span onclick="window.location.href = '/fr'"><%= image_tag("france.gif", :alt => "France") %></span>
 </div>
+
+
+<script>
+  // let formSub = document.getElementById("formBeauty");
+  
+  //  const formDaata = Object.fromEntries(
+  //     new FormData(formSub)
+  //   );
+
+  // formSub.addEventListener("submit", function (evt) {
+  //   let msg = "";
+
+
+  //   // Get Values from form
+  //   const formDaata = Object.fromEntries(
+  //     new FormData(formSub)
+  //   )
+
+  //   console.log(formDaata)
+  //   const { mens, womens, children, email } = formDaata
+  //   // Validate Email
+
+  //   // Validate that user select at least one check
+  //   let atLeastOne = [mens, womens, children].some((check) => check == 1)
+
+
+  //   // Add errors
+  //   errortag.innerHTML = msg;
+
+  //   if (!atLeastOne ) {
+  //       evt.preventDefault()
+  //   }
+
+  });
+</script>
+
