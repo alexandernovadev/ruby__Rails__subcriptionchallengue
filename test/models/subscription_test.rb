@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SusciptionTest < ActiveSupport::TestCase
+class SubscriptionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

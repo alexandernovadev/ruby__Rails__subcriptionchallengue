@@ -1,6 +1,6 @@
-class CreateSusciptions < ActiveRecord::Migration[7.0]
+class CreateSubscriptions < ActiveRecord::Migration[7.0]
   def change
-    create_table :susciptions do |t|
+    create_table :subscriptions do |t|
       t.string :email
       t.boolean :isWomen
       t.boolean :isMen

@@ -1,10 +1,10 @@
-<%= form_with(model: susciption ,:html => {:id =>"formBeauty"}) do |form| %>
-  <% if susciption.errors.any? %>
+<%= form_with(model: @subscription ,:html => {:id =>"formBeauty"}) do |form| %>
+  <% if @subscription.errors.any? %>
     <div style="color: var(--textDanger);margin-top:12px;margin-bottom:12px;" class="center">
       <span> <i>Upps ! Tienes algunos errores</i> </span> 
       <br>
     <ul>
-      <% susciption.errors.each do |error| %>
+      <% @subscription.errors.each do |error| %>
         <li><%= error.full_message %></li>
       <% end %>
     </ul>

@@ -1,8 +1,8 @@
-
-class Susciption < ApplicationRecord
+class Subscription < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
     validates :email, uniqueness: true
-    validate :validateEmailServer
+    
+    # validate :validateEmailServer
 
     # Validate at least one ckeck 
     validate do |value|
@@ -26,8 +26,8 @@ class Susciption < ApplicationRecord
         quality_score = data__json["quality_score"].to_d || nil
         
         ## Serive errors
-        # errors.add :email, :too_plain, message: " Asstracpi no esta funcionando ..." if !data__json["error"].nil?
+        errors.add :email, :too_plain, message: " Asstracpi no esta funcionando ..." if !data__json["error"].nil?
     
-        # errors.add :email, :too_plain, message: "email no server #{email}"  if quality_score < 0.7 && !quality_score.nil?
+        errors.add :email, :too_plain, message: "email no server #{email}"  if quality_score < 0.7 && !quality_score.nil?
     end
 end
