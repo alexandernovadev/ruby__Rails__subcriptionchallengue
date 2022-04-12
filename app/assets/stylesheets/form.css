@@ -1,0 +1,24 @@
+
+#formBeauty {
+    padding: 24px 16px;
+  }
+  #formBeauty div {
+    display: flex;
+  }
+  #formBeauty .labelCustom {
+    font-weight: 600;
+    color: var(--gray2);
+  }
+  .bannerSub__imagelogo span {
+    font-size: 12px;
+    margin-top: 8px;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    color: var(--gray0);
+  }
+  
+  .bannerSub h1 {
+    margin-top: 56px;
+  }
+  

@@ -4,7 +4,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions or /subscriptions.json
   def index
     @subscription = Subscription.new
-    @subscriptions = Subscription.all
+    # @subscriptions = Subscription.all
   end
 
   # GET /subscriptions/1 or /subscriptions/1.json
@@ -29,7 +29,7 @@ class SubscriptionsController < ApplicationController
         SubscriptionMailer.with(subscription: @subscription).new_subscription_email.deliver_later
 
         format.html { redirect_to '/' , notice: "Gracias por suscribirte, las mejores promociones te esperan !" }
-        format.json { render :index, status: :created, location: @susciption }
+        format.json { render :index, status: :created, location: @subscription }
      else
         format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @subscription.errors, status: :unprocessable_entity }
